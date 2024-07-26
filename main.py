@@ -8,8 +8,16 @@ class CalculatorApp(App):
     pass
 
 class MainScreen(BoxLayout):
-    pass
+    def __init__(self, **kwargs):
+        super().__init__(**kwargs)
+        self.N1 = 0
+        self.N2 = 0
+        self.Operater = ""
 
+    def Number_Button(self,Number):
+        print(Number)  
+    
+    def Operater_Buttons(self,op):print(op)
 
 
 
