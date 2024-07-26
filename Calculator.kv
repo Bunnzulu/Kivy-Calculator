@@ -3,7 +3,7 @@ MainScreen:
 <MainScreen>:
     orientation: "vertical"
     Label:
-        text:"Number here"
+        text: root.Display_Text
     GridLayout:
         cols:4
         rows:5
@@ -61,3 +61,4 @@ MainScreen:
             text:"."
         Button:
             text:"="
+            on_press: root.Calculate()
