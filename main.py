@@ -45,10 +45,38 @@ class MainScreen(BoxLayout):
             self.N1 = ""
             self.Display_Text = "-"
 
+    def AClear(self):
+        self.N2 = ""
+        self.N1 = ""
+        self.Operater = ""
+        self.Display_Text = "-"
+
+    def PercentSign(self):
+        if self.N2 != "":
+            self.Display_Text = self.Display_Text.replace(self.N2,str(float(self.N2)/100))
+            self.N2 = str(float(self.N2)/100)
+        elif self.N1 != "" and self.Operater == "":
+            self.Display_Text = self.Display_Text.replace(self.N1,str(float(self.N1)/100))
+            self.N1 = str(float(self.N1)/100)
+        elif self.Answer != "": 
+            self.Display_Text = self.Display_Text.replace(str(self.Answer),str(float(self.Answer)/100))
+            self.Answer = str(float(self.Answer)/100)
+
+    def SignChange(self):
+        if self.N2 != "":
+            self.Display_Text = self.Display_Text.replace(self.N2,str(-1*int(self.N2)))
+            self.N2 = str(-1*int(self.N2))
+        elif self.N1 != "" and self.Operater == "":
+            self.Display_Text = self.Display_Text.replace(self.N1,str(-1*int(self.N1)))
+            self.N1 = str(-1*int(self.N1))
+        elif self.Answer != "": 
+            self.Display_Text = self.Display_Text.replace(str(self.Answer),str(-1*int(self.Answer)))
+            self.Answer = str(-1*int(self.Answer))
+
     def Calculate(self):
         if self.N2 != "":
-            self.N1 = int(self.N1)
-            self.N2 = int(self.N2)
+            self.N1 = float(self.N1)
+            self.N2 = float(self.N2)
             if self.Operater == "+": self.Answer = self.N1 + self.N2
             elif self.Operater == "-": self.Answer = self.N1 - self.N2
             elif self.Operater == "*": self.Answer = self.N1 * self.N2

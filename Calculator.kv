@@ -9,10 +9,13 @@ MainScreen:
         rows:5
         Button:
             text:"AC"
+            on_press: root.AClear()
         Button:
             text:"+/-"
+            on_press: root.SignChange()
         Button:
             text:"%"
+            on_press:root.PercentSign()
         Button:
             text:"/"
             on_press: root.Operater_Buttons(self.text)
@@ -60,6 +63,7 @@ MainScreen:
             on_press: root.Clear()
         Button:
             text:"."
+            on_press:root.Number_Button(self.text)
         Button:
             text:"="
             on_press: root.Calculate()
